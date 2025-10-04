@@ -181,6 +181,15 @@
             text-align: center;
         }
 
+        /* ESTILO ADICIONAL PARA EL BOTÓN WA */
+        .btn-velasquez::after {
+            content: " (WA)";
+            font-size: 0.7em;
+            font-weight: 900;
+            color: var(--darker-pink); 
+            margin-left: 2px;
+        }
+
         /* --- sección hero mínima --- */
         .hero-section {
             display: flex;
@@ -348,6 +357,7 @@
         }
         .app-card .header-icons {
             font-size: 0.6em; 
+            display: none;
         }
         .app-card .image-placeholder {
             height: 50px; 
@@ -364,6 +374,7 @@
         }
         .app-card .app-title {
             font-size: 0.8em; 
+            font-weight: 700;
         }
         .app-card .tags {
             margin-top: 0; 
@@ -371,6 +382,16 @@
             white-space: nowrap; 
             overflow: hidden; 
             text-overflow: clip;
+        }
+        /* ETIQUETA WA */
+        .wa-tag {
+            background-color: var(--button-blue); 
+            color: var(--text-white); 
+            padding: 1px 3px; 
+            border-radius: 3px;
+            font-size: 0.5em; 
+            font-weight: 700;
+            margin-right: 3px; 
         }
         .app-card .tag {
             background-color: var(--darker-pink);
@@ -423,7 +444,7 @@
             
             <div class="nav-buttons">
                 <span class="recarga-text">recarga</span>
-                <a class="btn-velasquez" href="https://wa.me/+59171664587">velasquez</a>
+                <a class="btn-velasquez" href="https://wa.me/+59171664587">velasquez</a> 
             </div>
         </header>
 
@@ -471,7 +492,7 @@
             <h2>selecciona tu servicio</h2>
             <div class="app-cards-container">
                 
-                <a class="card-link" href="https://wa.me/+59171664587?text=_REC%C3%81RGAME%20CR%C3%89DITO%20DE%20ENTEL_">
+                <a class="card-link" href="https://wa.me/+59171664587?text=_RECARGAME%20CREDITO%20DE%20ENTEL_">
                     <div class="app-card">
                         <div class="header-icons">
                             <span class="arrow">←</span>
@@ -485,13 +506,14 @@
                         </div>
                         <p class="app-title">recarga entel</p>
                         <div class="tags">
+                            <span class="wa-tag">wa.me</span>
                             <span class="tag">crédito</span>
                             <span class="tag">paquete</span>
                         </div>
                     </div>
                 </a>
 
-                <a class="card-link" href="https://wa.me/+59171664587?text=_REC%C3%81RGAME%20CR%C3%89DITO%20PARA%20TIGO_">
+                <a class="card-link" href="https://wa.me/+59171664587?text=_RECARGAME%20CREDITO%20PARA%20TIGO_">
                     <div class="app-card">
                         <div class="header-icons">
                             <span class="arrow">←</span>
@@ -505,13 +527,14 @@
                         </div>
                         <p class="app-title">recarga tigo</p>
                         <div class="tags">
+                            <span class="wa-tag">wa.me</span>
                             <span class="tag">crédito</span>
                             <span class="tag">paquetes</span>
                         </div>
                     </div>
                 </a>
 
-                <a class="card-link" href="https://wa.me/+59171664587?text=_REC%C3%81RGAME%20CR%C3%89DITO%20PARA%20VIVA_">
+                <a class="card-link" href="https://wa.me/+59171664587?text=_RECARGAME%20CREDITO%20PARA%20VIVA_">
                     <div class="app-card">
                         <div class="header-icons">
                             <span class="arrow">←</span>
@@ -522,6 +545,7 @@
                         </div>
                         <p class="app-title">recarga viva</p>
                         <div class="tags">
+                            <span class="wa-tag">wa.me</span>
                             <span class="tag">crédito</span>
                             <span class="tag">paquete</span>
                         </div>
