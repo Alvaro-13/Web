@@ -6,31 +6,37 @@
     <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, max-age=0">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <title>creado por álvaro - esquema celeste claro con small-caps y partículas intensas</title>
+    <title>creado por álvaro - esquema claro Neumorfismo (Original)</title>
     <link href="https://fonts.googleapis.com/css2?family=poppins:wght400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* variables y estilos generales ultra compactos (ESQUEMA CLARO - FONDO CELESTE) */
+        /* variables y estilos generales (NEUMORFISMO MÍNIMO) */
         :root {
-            --primary-pink: #ff3b8a;
-            --darker-pink: #dc2f6f;
-            --background-dark: #e0ffff; /* CAMBIO CLAVE: CELESTE CLARO */ 
-            --text-black: #00008b; /* CAMBIO CLAVE: AZUL OSCURO PARA CONTRASTE */ 
-            --text-white: #ffffff; 
-            --text-light-gray: #333333;
-            --button-orange: #ff8c00;
-            --button-blue: #00bfff;
-            --card-bg-light: #c0ffff; /* Un celeste más claro para las tarjetas */
-            --font-poppins: 'poppins', sans-serif;
+            /* Colores de la Calculadora / Neumorfismo */
+            --primary-green: #4CAF50; 
+            --background-light: #ebebeb; /* Fondo principal (Gris muy claro) */
+            --button-base-color: #e0e0e0; /* Color base de botones/cards (Gris claro intermedio) */
             
-            /* colores de operadores */
+            /* Sombras Neumórficas (Ajustadas para el fondo #ebebeb) */
+            --neumorphic-light: rgba(255, 255, 255, 0.7); /* Sombra clara */
+            --neumorphic-dark: rgba(190, 190, 190, 0.4); /* Sombra oscura */
+            
+            /* Colores Base */
+            --text-black: #333333; 
+            --text-white: #ffffff; 
+            
+            /* Operadores (Manteniendo el color original) */
             --color-tigo: #00bfff;
             --color-entel-celeste: #00bcd4; 
             --color-viva: #3cb371;
             
-            /* Color rojo brillante para la animación de fondo */
-            --particle-red: #ff0000;
+            /* Color de Acento (VERDE Principal) */
+            --accent-color: var(--primary-green);
+            --button-contact: var(--primary-green); 
             
-            /* Altura de línea estándar para el carrusel */
+            /* Tarjetas de fondo (usaremos el color base del botón Neumórfico) */
+            --card-bg-light: var(--button-base-color); 
+            
+            --font-poppins: 'poppins', sans-serif;
             --line-height-base: 1.5em; 
         }
 
@@ -40,9 +46,8 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            /* Intentos adicionales contra la impresión y captura */
-            pointer-events: auto; /* Revertir para que los clics funcionen */
-            -webkit-touch-callout: none; /* iOS */
+            pointer-events: auto; 
+            -webkit-touch-callout: none; 
         }
         
         a, a:focus, a:active {
@@ -51,72 +56,36 @@
             cursor: pointer; 
         }
 
-        /* Feedback visual al presionar tarjetas y botones */
+        /* ESTILO NEUMÓRFICO BASE PARA BOTONES Y TARJETAS */
+        .card-link, .btn-velasquez {
+            transition: all 0.1s ease-out; /* Transición rápida */
+            /* Sombra suave de salida (Neumorfismo) */
+            box-shadow: 3px 3px 6px var(--neumorphic-dark), -3px -3px 6px var(--neumorphic-light);
+            border-radius: 8px; /* Mantenemos el borde original para no afectar el tamaño */
+        }
+
+        /* Feedback visual al presionar (Efecto de Presión Neumórfica) */
         .card-link:active, .btn-velasquez:active {
+            /* Sombra interior de presión (Neumorfismo) */
+            box-shadow: inset 2px 2px 4px var(--neumorphic-dark), inset -2px -2px 4px var(--neumorphic-light);
             transform: scale(0.98); 
-            opacity: 0.9; 
-            transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+            opacity: 1; /* Quitamos el opacity para el efecto neumórfico puro */
         }
 
         body {
             font-family: var(--font-poppins);
             margin: 0;
             padding: 0;
-            background: var(--background-dark); 
+            background: var(--background-light); /* GRIS CLARO DE FONDO */
             color: var(--text-black); 
-            overflow: hidden; 
+            overflow: hidden; /* Mantenemos el overflow original */
             position: relative; 
             font-variant: small-caps;
         }
         
-        /* animación de partículas de fondo (MÁS Y MÁS RÁPIDAS) */
+        /* ELIMINACIÓN DE LA ANIMACIÓN DE PARTÍCULAS ORIGINAL */
         body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; 
-            z-index: -1; 
-            
-            /* Alta densidad de puntos rojos */
-            background: 
-                radial-gradient(circle at 10% 20%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 70% 80%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 30% 60%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 90% 40%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 50% 10%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 20% 90%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 80% 10%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 40% 70%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 60% 30%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 5% 50%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 95% 50%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 25% 5%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 75% 95%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 15% 75%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 85% 25%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 35% 15%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 65% 85%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 10% 45%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 90% 65%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 55% 5%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 5% 70%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 70% 30%, var(--particle-red) 1px, transparent 1px),
-                radial-gradient(circle at 20% 55%, var(--particle-red) 1px, transparent 1px);
-
-            background-size: 100% 100%; 
-            /* Animación más rápida */
-            animation: flicker-points 5s infinite alternate; 
-        }
-
-        @keyframes flicker-points {
-            0%   { opacity: 0.2; transform: scale(1); }
-            25%  { opacity: 0.8; transform: scale(1.01); }
-            50%  { opacity: 0.4; transform: scale(0.99); }
-            75%  { opacity: 1; transform: scale(1.02); }
-            100% { opacity: 0.2; transform: scale(1); }
+            display: none; 
         }
         
         /* eliminar el subrayado de todos los enlaces */
@@ -129,17 +98,17 @@
         main {
             max-width: 800px; 
             margin: 0 auto; 
-            padding-bottom: 5px; 
+            padding-bottom: 5px; /* Mantenemos padding original */
             position: relative; 
             z-index: 1; 
         }
 
-        /* --- navbar mínima --- */
+        /* --- navbar mínima (Color y Neumorfismo en el botón) --- */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 2%;
+            padding: 10px 2%; /* Mantenemos padding original */
             color: var(--text-black); 
         }
         .navbar .logo {
@@ -168,32 +137,37 @@
             color: var(--text-black); 
         }
         .navbar .nav-buttons .btn-velasquez {
+            /* Mantenemos padding/tamaño original */
             padding: 5px 10px;
             font-size: 0.8em;
             border: none;
             border-radius: 50px;
             font-weight: 700;
             font-family: var(--font-poppins);
-            background-color: var(--button-orange);
-            color: var(--text-black); 
-            box-shadow: 0 3px 8px rgba(255, 140, 0, 0.4);
+            background-color: var(--button-contact); /* VERDE de acento */
+            color: var(--text-white); /* Texto blanco para contraste */
             display: inline-block; 
             text-align: center;
+            /* Aplicamos solo la sombra neumórfica desde la clase base */
         }
+
 
         /* --- sección hero mínima --- */
         .hero-section {
             display: flex;
             flex-direction: column; 
             align-items: center;
-            padding: 10px 2%;
+            padding: 10px 2%; /* Mantenemos padding original */
             text-align: center;
         }
-        .hero-content {
-            max-width: 100%; 
-            order: 2; 
-        }
+        
+        /* Contenedor de ilustración con color de fondo para el efecto neumórfico */
         .hero-illustration {
+            background-color: var(--button-base-color); 
+            border-radius: 8px;
+            /* Aplica una sombra suave a la ilustración (no debe ser clicable) */
+            box-shadow: 3px 3px 6px var(--neumorphic-dark), -3px -3px 6px var(--neumorphic-light);
+            
             position: static; 
             width: 30%; 
             max-width: 180px;
@@ -202,6 +176,7 @@
             display: block; 
             line-height: 0; 
         }
+        
         .hero-illustration img {
             display: block; 
             width: 100%;
@@ -216,7 +191,7 @@
         .hero-content h1 .styled-phrase {
             font-style: italic;
             font-weight: 900; 
-            color: var(--particle-red); 
+            color: var(--accent-color); /* VERDE de acento */
             text-shadow: none; 
         }
         
@@ -224,6 +199,7 @@
         .hero-content .subtitle-container {
             font-size: 1.1em; 
             margin-bottom: 10px;
+            max-width: 100%;
             height: var(--line-height-base); 
             overflow: hidden; 
             display: block; 
@@ -299,7 +275,7 @@
 
         /* --- sección de casos mínima --- */
         .selected-cases-section {
-            padding: 10px 2%;
+            padding: 10px 2%; /* Mantenemos padding original */
             padding-top: 20px; 
         }
         .selected-cases-section h2 {
@@ -308,37 +284,28 @@
             font-weight: 800; 
             opacity: 1; 
             color: var(--text-black); 
-            animation: red-glow-pulse 1.5s infinite alternate;
-        }
-        
-        @keyframes red-glow-pulse {
-            0% {
-                text-shadow: 0 0 5px rgba(255, 0, 0, 0.2), 
-                             0 0 10px rgba(255, 0, 0, 0.1);
-            }
-            100% {
-                text-shadow: 0 0 10px rgba(255, 0, 0, 0.6),
-                             0 0 20px rgba(255, 0, 0, 0.4), 
-                             0 0 30px rgba(255, 0, 0, 0.2);
-            }
+            /* Quitamos la animación de brillo para coherencia con el Neumorfismo */
+            animation: none;
+            text-shadow: 1px 1px 2px var(--neumorphic-light);
         }
         
         .app-cards-container {
             display: flex;
             overflow-x: auto; 
-            gap: 8px; 
+            gap: 8px; /* Mantenemos gap original */
             padding-bottom: 5px;
         }
         .card-link {
             flex: 0 0 auto; 
             display: block; 
-            width: 105px; 
+            width: 105px; /* Mantenemos ancho original */
+            /* Aplicamos solo la sombra neumórfica desde la clase base */
         }
         .app-card {
-            background: var(--card-bg-light); 
+            background: var(--card-bg-light); /* GRIS CLARO BASE para el botón */
             border-radius: 8px; 
             padding: 8px; 
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            /* Eliminamos box-shadow para que solo aplique el estilo Neumórfico de la clase link */
             color: var(--text-black); 
             height: auto; 
             display: flex;
@@ -347,7 +314,6 @@
         }
         .app-card .header-icons {
             font-size: 0.6em; 
-            display: none;
         }
         .app-card .image-placeholder {
             height: 50px; 
@@ -364,7 +330,6 @@
         }
         .app-card .app-title {
             font-size: 0.8em; 
-            font-weight: 700;
         }
         .app-card .tags {
             margin-top: 0; 
@@ -373,18 +338,8 @@
             overflow: hidden; 
             text-overflow: clip;
         }
-        /* ETIQUETA WA (CLASE Y ESTILOS MANTENIDOS, PERO YA NO SE USA EN EL HTML) */
-        .wa-tag {
-            background-color: var(--button-blue); 
-            color: var(--text-white); 
-            padding: 1px 3px; 
-            border-radius: 3px;
-            font-size: 0.5em; 
-            font-weight: 700;
-            margin-right: 3px; 
-        }
         .app-card .tag {
-            background-color: var(--darker-pink);
+            background-color: var(--accent-color); /* VERDE de acento */
             color: var(--text-white); 
             padding: 1px 3px; 
             border-radius: 3px;
@@ -393,7 +348,7 @@
             margin-right: 3px; 
         }
         
-        /* media query: para pantallas más grandes */
+        /* media query: para pantallas más grandes (Mantenemos la estructura original) */
         @media (min-width: 768px) {
             .hero-section {
                 flex-direction: row; 
@@ -434,7 +389,7 @@
             
             <div class="nav-buttons">
                 <span class="recarga-text">recarga</span>
-                <a class="btn-velasquez" href="https://wa.me/+59171664587">velasquez</a> 
+                <a class="btn-velasquez" href="https://wa.me/+59171664587">velasquez</a>
             </div>
         </header>
 
@@ -482,7 +437,7 @@
             <h2>selecciona tu servicio</h2>
             <div class="app-cards-container">
                 
-                <a class="card-link" href="https://wa.me/+59171664587?text=_RECARGAME%20CREDITO%20DE%20ENTEL_">
+                <a class="card-link" href="https://wa.me/+59171664587?text=_REC%C3%81RGAME%20CR%C3%89DITO%20DE%20ENTEL_">
                     <div class="app-card">
                         <div class="header-icons">
                             <span class="arrow">←</span>
@@ -502,7 +457,7 @@
                     </div>
                 </a>
 
-                <a class="card-link" href="https://wa.me/+59171664587?text=_RECARGAME%20CREDITO%20PARA%20TIGO_">
+                <a class="card-link" href="https://wa.me/+59171664587?text=_REC%C3%81RGAME%20CR%C3%89DITO%20PARA%20TIGO_">
                     <div class="app-card">
                         <div class="header-icons">
                             <span class="arrow">←</span>
@@ -522,7 +477,7 @@
                     </div>
                 </a>
 
-                <a class="card-link" href="https://wa.me/+59171664587?text=_RECARGAME%20CREDITO%20PARA%20VIVA_">
+                <a class="card-link" href="https://wa.me/+59171664587?text=_REC%C3%81RGAME%20CR%C3%89DITO%20PARA%20VIVA_">
                     <div class="app-card">
                         <div class="header-icons">
                             <span class="arrow">←</span>
@@ -599,4 +554,3 @@
 
 </body>
 </html>
-
